@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scriptts Library</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style.css'  %}" rel="stylesheet" type="text/css">
+    <title>Library Management System</title>
+</head>
+<body>
+<header>
+     <ul>
+       <li><a href="{% url 'signup' %}" style="margin-left: 20px">Sign Up </a>
+       <li><a href="" style="margin-left: 20px">Login </a>
+         <ul>
+           <li><a href="{% url 'login' %}">User</a></li>
+           <li><a>Admin</a></li>
+         </ul>
+       <li><a href="" style="margin-left: 20px">About </a>
+         <ul>
+           <li><a>Location</a></li>
+           <li><a>Timings</a></li>
+           <li><a>Collections</a></li>
+         </ul>
+       <li><a href="" style="margin-left: 20px">Home</a></li>
+     </ul>
+   </header>
+<div class="lib-logo">
+  <h1 style="margin-left: 10px">SCRIPTTS</h1>
+</div>
+<form action="index.html" class="login-box">
+  <h2>Welcome</h2><br>
+  <h3>We are here to help simplify all activities related to the Scriptts Library for readers and staff alike
+    through this automated online library management system</h3>
+
+</form>
+</body>
+</html>
