@@ -1,0 +1,45 @@
+{% extends 'homepage_admin.html' %}
+{% load static %}
+{% block content%}
+
+<head>
+	<title>Add a Book</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<style>
+    /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #a50000;
+     box-shadow: 0 1px 0 0 #a50000;
+   }
+  .row.input-field col-s12.card card-body.waves-effect waves-light btn red darken-4"{
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+</style>
+
+</head>
+
+<h5 align="center">Update Book:</h5>
+<div class="row">
+    <div class="input-field col-s12">
+        <div class="card card-body" align="center">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+
+                <input href="{% url 'update_book' %}" type="submit" value="Update" class="waves-effect waves-light btn red darken-4 btn-large"  align="inline-block">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

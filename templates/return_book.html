@@ -1,0 +1,26 @@
+{%  extends 'homepage_admin.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body" style="width: 60rem; margin-left: 200px;">
+
+
+			<p align="center">Do you want to return "{{ issued.book }}"?</p>
+
+			<form action="{% url 'return_book' issued.id  %}" method="POST">
+
+				{% csrf_token %}
+				<input style="margin-left: 350px;" class="btn btn-danger" type="submit" name="Return" value="Return">
+				<a class="btn btn-warning"  href="{% url 'user_status' %}">Cancel</a>
+
+
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+

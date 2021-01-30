@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form Records</title>
+
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>No. of Copies</th>
+        <th>Book Publisher</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for form in book %}
+    <tr>
+        <td>{{ form.Book_ID }}</td>
+        <td>{{ form.Book_Name }}</td>
+        <td>{{ form.Author }}</td>
+        <td>{{ form.Genre }}</td>
+        <td>{{ form.Copy_Num }}</td>
+        <td>{{ form.Book_Publisher }}</td>
+        <td>
+            <a href="/edit/{{ form.Book_ID }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ form.Book_ID }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href={% url 'addbook' %} class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   {% if submitted %}
+   <p class="success">
+    Your venue was submitted successfully. Thank you.
+   </p>
+   {% else %}
+   <form action="" method="post" novalidate>
+   <table>
+     {{ form.as_table }}
+     <tr>
+       <td>&nbsp;</td>
+       <td><input type="submit" value="Submit"></td>
+     </tr>
+       </table>
+       {% endif %}
+</body>
+</html>
+
+'''
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add a Book</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link type="text/css" rel="stylesheet" href="../static/css/style1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fenix&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Fenix&display=swap" rel="stylesheet">
+	<style>
+		*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fenix', sans-serif;
+        }
+
+        ul li
+        {
+             text-decoration: none;
+             color: floralwhite;
+            display: block;
+            float: top;
+
+
+        }
+body{
+  background: #;
+  padding: 0 10px;
+}
+.wrapper{
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+  padding: 30px;
+}
+
+.wrapper .title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: ;
+  text-align: center;
+}
+
+.wrapper .form{
+  width: 100%;
+}
+
+
+
+.wrapper .form .inputfield .btn{
+  width: 100%;
+   padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #a50000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapper .form .inputfield .btn:hover{
+  opacity: 0.7;
+}
+
+.wrapper .form .inputfield:last-child{
+  margin-bottom: 0;
+}
+
+@media (max-width:420px) {
+  .wrapper .form .inputfield{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms{
+    flex-direction: row;
+  }
+}
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+            background-color: white;
+            font-family: "Fenix", sans-serif;
+		}
+
+	#form-title{
+            font-size: 36px;
+			color: black;
+            font-family: "Fenix", sans-serif;
+
+		}
+		.login_btn {
+            justify-content: inherit;
+            margin: 12px 0;
+			width: 100%;
+			background: #ffffff00 !important;
+			color: black !important;
+            border: 2px dimgrey;
+            border-radius: 20px;
+		}
+		.login_btn:focus {
+			box-shadow: dimgrey !important;
+			outline: 0px !important;
+		}
+        .login_btn:hover {
+            background-color: whitesmoke !important;
+            opacity: 0.7;
+        }
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #ffffff00 !important;
+            font-family: "Fenix", sans-serif;
+            font-size: 16px;
+			color: black !important;
+			border: 0 !important;
+			border-radius: 0 0 0 0 !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: black !important;
+			outline: 0px !important;
+		}
+		.form-control{
+
+
+		}
+        .d-flex {
+            color: black;
+        }
+        .ml-2{
+            text-decoration-line: underline;
+            color: black;
+        }
+        .ml-2:hover {
+            color: grey !important;
+            opacity: 0.9;
+        }
+        .ml-2 a {
+            color: grey; !important;
+        }
+
+	</style>
+
+</head>
+<body>
+<div class="navbar-fixed">
+    <nav class="red darken-4">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Scriptts Library</a>
+                <a href="#" data-target="mobile-demo" class="fas fa-sidenav-trigger"><i class="material-icons"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#search">Search</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'addbook' %}">Add Books</a>
+                    </li>
+                    <li>
+                        <a href="">Remove Books</a>
+                    </li>
+                    <li>
+                        <a href="">User Status</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li>
+        <a href="#home">Search</a>
+    </li>
+    <li>
+        <a href="#search">Add Books</a>
+    </li>
+    <li>
+        <a href="#popular">Remove Books</a>
+    </li>
+    <li>
+        <a href="">User Status</a>
+    </li>
+    <li>
+        <a href="{% url 'home' %}">Logout</a>
+    </li>
+</ul>
+
+<a class="ml-2" href="{% url 'home' %}"><i class="fas fa-arrow-left"></i></a>
+<div class="wrapper">
+    <div class="title">
+      Add new book here:
+    </div>
+
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <div class="form">
+         <div class="inputfield">
+          <label>Book ID</label>
+          <input type="text" class="input">
+           {{ form.Book_ID }}
+       </div>
+        <div class="inputfield">
+          <label>Book Name</label>
+          <input type="text" class="input">
+            {{ form.Book_Name }}
+       </div>
+       <div class="inputfield">
+          <label>Author Name</label>
+          <input type="text" class="input">
+           {{ form.Author }}
+       </div>
+        <div class="inputfield">
+          <label>No. of Copies</label>
+          <input type="text" class="input">
+            {{ form.Copy_Num }}
+       </div>
+      <div class="inputfield">
+          <label>Genre</label>
+          <input type="text" class="input">
+          {{ form.Genre }}
+       </div>
+        <div class="inputfield">
+          <label>Book Publisher</label>
+          <input type="text" class="input">
+            {{ form.Book_Publisher}}
+       </div>
+
+      <div class="inputfield">
+        <input href="{% url 'addbook' %}" type="submit" value="Add" class="btn">
+      </div>
+    </div>
+    </form>
+
+</div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        //Side Menu
+        const sideNav = document.querySelector('.sidenav');
+       M.Sidenav.init(sideNav, {});
+    </script>
+</body>
+'''

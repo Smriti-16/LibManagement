@@ -1,0 +1,50 @@
+{%  extends 'homepage_user.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-7">
+    {% if li1%}
+    <table class="highlight centered" style="width: 75rem;">
+
+  <tr align="center">
+      <th>Name</th>
+      <th>Book Name</th>
+      <th>Book Author</th>
+      <th>Issue Date</th>
+      <th>Expiry Date</th>
+      <th>Fine</th>
+  </tr>
+  <tbody>
+
+       {% for t in li1 %}
+
+<tr>
+  <td>  {{t.0}}</td>
+  <td>  {{t.1}}</td>
+  <td>  {{t.2}}</td>
+       {% endfor %}
+
+       {% for t in li2 %}
+
+  <td>  {{t.0}}</td>
+  <td>  {{t.1}}</td>
+  <td>  {{t.2}}</td>
+       {% endfor %}
+
+</tr>
+  </tbody>
+  </table>
+
+
+
+  {%else%}
+
+    <h3 style="width: 100rem; height: 20rem;" align="center"> No books issued</h3>
+
+  {%endif%}
+    </div>
+</div>
+
+
+{% endblock %}

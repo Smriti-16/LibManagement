@@ -1,0 +1,25 @@
+{%  extends 'homepage_admin.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body" style="width: 60rem; margin-left: 200px;" >
+
+
+			<p align="center">Are you sure you want to delete "{{book.Book_Name}}"?</p>
+
+			<form action="{% url 'delete_book' book.id  %}" method="POST">
+
+				{% csrf_token %}
+				<input class="btn btn-danger" style="margin-left: 350px;" type="submit" value="Confirm">
+				<a class="btn btn-warning" href="{% url 'admin_home' %}">Cancel</a>
+
+
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

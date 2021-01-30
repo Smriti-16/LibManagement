@@ -1,0 +1,356 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{% static '/css/materialize.min.css' %}"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="{% static '/css/style1.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Fenix&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        *
+        {
+            font-family: "Fenix", sans-serif;
+        }
+
+          .slider .btn {
+              margin-top: 20px;
+        }
+
+        .section-search input {
+            padding: 5px !important;
+            font-size: 18px !important;
+            width: 90% !important;
+            border: #f4f4f4 3px solid !important;
+        }
+
+        .section-follow .fa-4x {
+            margin: 5px 10px;
+        }
+
+        .section-contact h5 {
+            margin-bottom: 30px;
+        }
+       ul li a
+{
+  text-decoration: none;
+  color: floralwhite;
+  display: block;
+  float: top;
+
+}
+ul li a:hover
+{
+  background-color:  #ffffff00;
+  opacity: 0.9;
+}
+ul li ul li{
+  display: none;
+}
+ul li:hover ul li
+{
+  display: inline-block;
+  text-align: left;
+}
+
+    </style>
+    <title>Scriptts</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'%}">
+    </head>
+    <body>
+    <div class="navbar-fixed">
+    <nav class="red darken-4">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="{% url 'home' %}" class="brand-logo">Scriptts Library</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#popular">Popular Collections</a>
+            </li>
+            <li>
+              <a href="#gallery">Gallery</a>
+            </li>
+            <li>
+              <a href="#location">Location</a>
+            </li>
+            <li><a href="">Login</a>
+                    <ul>
+                      <li><a href="{% url 'login_user'%}">User</a></li>
+                      <li><a href="{% url 'login_admin'%}">Admin</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a href="{% url 'signup' %}">Sign Up</a>
+            </li>
+           </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+      <a href="#services">Services</a>
+    </li>
+    <li>
+      <a href="#popular">Popular Collections</a>
+    </li>
+    <li>
+      <a href="#gallery">Gallery</a>
+    </li>
+    <li>
+      <a href="#location">Location</a>
+    </li>
+    <li><a href="">Login</a>
+      <ul>
+        <li><a href="{% url 'login_user'%}">User</a></li>
+        <li><a href="{% url 'login_admin'%}">Admin</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="{% url 'signup' %}">Sign Up</a>
+    </li>
+  </ul>
+
+  <!-- Section: Slider -->
+ <section class="slider" id="home">
+    <ul class="slides">
+      <li>
+        <img src="../static/home2.jpg" alt="">
+        <div class="caption right-align">
+          <h2>All Your Favourite Classics</h2>
+        </div>
+      </li>
+      <li>
+        <img src="../static/home1.jpg" alt="">
+        <div class="caption right-align black-text">
+          <h2> We Provide A Multitude of Services</h2>
+        </div>
+      </li>
+      <li>
+        <img src="../static/home3.jpg"  alt="">
+        <div class="caption right-align">
+          <h2>Newest Collections</h2>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+
+  <!-- Section: Icon Boxes -->
+    <section class="section section-icons grey lighten-4 center scrollspy" id="services">
+      <h3 class="red-text darken-4">Services</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card-panel">
+            <i class="material-icons large red-text darken-4">room</i>
+            <h4>Circulation Services</h4>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card-panel">
+            <i class="material-icons large red-text darken-4">book</i>
+            <h4>Reference Services</h4>
+          </div>
+        </div>
+        <div class="col s11 m4">
+          <div class="card-panel">
+            <i class="material-icons large red-text darken-4">print</i>
+            <h4>Photocopy Services</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Popular -->
+  <section id="popular" class="section section-popular scrollspy">
+    <div class="container">
+      <div class="row">
+        <h4 class="center">
+          <span class="red-text darken-4">Popular</span> Book<span class="red-text darken-2"> Genres</span></h4>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/davinci.jpg" alt="">
+              <span class="card-title" style="color: white;">Mystery</span>
+            </div>
+            <div class="card-content">
+              <p>A genre of fiction that usually involves a mysterious death or a crime to be solved. Mystery novels are often called 'whodunnits' because they turn the reader into a detective trying to figure out the who, when, and how of a particular crime.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/download.jpg" alt="">
+              <span class="card-title">Science Fiction</span>
+            </div>
+            <div class="card-content">
+              <p>A genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, and extraterrestrial life.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/divergent.jpg" alt="">
+              <span class="card-title">Dystopian</span>
+            </div>
+            <div class="card-content">
+              <p>Dystopian literature is a form of hypothetical fiction that began as a response to utopian literature. A dystopia is an imagined community or society that is dehumanizing and frightening.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Follow -->
+  <section class="section section-follow red darken-4 darken-2 white-text center">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h4>Follow Scriptts</h4>
+          <p>Follow us on social media for latest event updates</p>
+          <a href="htttps://facebook.com" target="_blank" class="white-text">
+            <i class="fab fa-facebook fa-4x"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="white-text">
+            <i class="fab fa-twitter fa-4x"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="white-text">
+            <i class="fab fa-linkedin fa-4x"></i>
+          </a>
+          <a href="https://googleplus.com" target="_blank" class="white-text">
+            <i class="fab fa-google-plus fa-4x"></i>
+          </a>
+          <a href="" class="white-text">
+            <i class="fa fa-pinterest" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gallery -->
+  <section id="gallery" class="section section-gallery scrollspy">
+    <div class="container">
+      <h4 class="center">
+        <span class="red-text darken-4">Photo </span> Gallery
+      </h4>
+      <div class="row">
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://imechewebresources.blob.core.windows.net/imeche-web-content-osf/images/default-source/oscar/libraries-and-archive/library-gallery/imeche_library0909195714-800-v2.jpg?sfvrsn=4" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQkoqgOE2PWBOdy6njzEOrq_iOR6NzUUK8yA&usqp=CAU" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://forbeslibrary.org/wp-content/uploads/2014/04/IMG_20170523_120216067-1024x608.jpg" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?books" alt="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?library" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://www.amny.com/wp-content/uploads/2019/08/image-269.jpg" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://www.trafsys.com/wp-content/uploads/2020/02/library-people-counters.jpg" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?book, travel" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Location -->
+ <section class="section section-location scrollspy" id="location">
+   <div class="row">
+     <div class="col s12 m4">
+              <h4>Location</h4>
+          <ul>
+            </li>
+            <li class="collection-item">Scriptts Library</li>
+            <li class="collection-item">42nd Street Bryant Park </li>
+            <li class="collection-item">New York ,NY 10018</li>
+          </ul>
+     </div>
+   </div>
+ </section>
+
+  <!-- Footer -->
+  <footer class="section red darken-4 darken-2 white-text center">
+    <p class="flow-text">Scriptts &copy; 2020</p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+   <script>
+    //Side Menu
+     const sideNav = document.querySelector('.sidenav');
+     M.Sidenav.init(sideNav, {});
+
+    // Slider
+    const slider = document.querySelector('.slider');
+    M.Slider.init(slider, {
+        indicators: false,
+        height: 500,
+        transition: 500,
+        interval: 6000
+      });
+
+    // Scrollspy
+    const ss = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(ss, {});
+
+    // Material Boxed
+    const mb = document.querySelectorAll('.materialboxed');
+    M.Materialbox.init(mb, {});
+
+    // Auto Complete
+    const ac = document.querySelector('.autocomplete');
+    M.Autocomplete.init(ac, {
+        data: {
+          "Aruba": null,
+          "Cancun Mexico": null,
+          "Hawaii": null,
+          "Florida": null,
+          "California": null,
+          "Jamaica": null,
+          "Europe": null,
+          "The Bahamas": null,
+        }
+      });
+    </script>
+
+    </body>
+  </html>
+
